@@ -39,5 +39,5 @@ exports.updateWord = (req, res) => {
       }
       res.json(word);
     }
-  )
-}
+  );
+};
