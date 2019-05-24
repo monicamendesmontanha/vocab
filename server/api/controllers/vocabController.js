@@ -10,3 +10,12 @@ exports.listAllWords = (req, res) => {
   });
 };
 
+exports.createWord = (req, res) => {
+  const newWord = new Vocab(req.body);
+  newWord.save((err,word) => {
+    if(err) {
+      res.send(err);
+    }
+    res.send(word);
+  });
+}
