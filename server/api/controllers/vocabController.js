@@ -19,3 +19,12 @@ exports.createWord = (req, res) => {
     res.send(word);
   });
 }
+
+exports.readWord = (req, res) => {
+  Vocab.findById(req.params.id, (err, word) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json(word);
+  });
+};
