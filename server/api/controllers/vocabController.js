@@ -41,3 +41,15 @@ exports.updateWord = (req, res) => {
     }
   );
 };
+
+exports.deleteWord = (req, res) => {
+  Vocab.deleteOne({_id: req.params.id}, (err) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json({
+      message: 'Word successfully deleted',
+      _id: req.params.id
+    });
+  })
+};
