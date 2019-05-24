@@ -28,3 +28,16 @@ exports.readWord = (req, res) => {
     res.json(word);
   });
 };
+
+exports.updateWord = (req, res) => {
+  Vocab.findOneAndUpdate(
+    {_id: req.params.id},       // id
+    req.body,                   // new values
+    (err, word) => {
+      if (err) {
+        res.send(err);
+      }
+      res.json(word);
+    }
+  )
+}
