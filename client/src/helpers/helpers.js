@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = 'http:/localhost:3000/words/';
+const baseURL = 'http://localhost:3000/words/';
 
 // Higher order helper function to reduce error handling boilerplate.
 const handlleError = (fn) => (...params) =>
