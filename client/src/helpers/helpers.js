@@ -1,11 +1,24 @@
-import axios from "axios";
+import axios from 'axios';
+import Vue from 'vue';
+import VueFlashMessage from 'vue-flash-message';
+import 'vue-flash-message/dist/vue-flash-message.min.css';
+
+Vue.use(VueFlashMessage, {
+  messageOptions: {
+    timeOut: 3000,
+    pauseOnInteract: true
+  }
+});
+
+const v = new Vue();
 
 const baseURL = 'http://localhost:3000/words/';
 
 // Higher order helper function to reduce error handling boilerplate.
 const handlleError = (fn) => (...params) =>
   fn(...params).catch((error) => {
-    console.log(error);
+    // console.log(error);
+    v.flash(`${ error.response.status }: ${ error.response.statusText }`, 'error');
   });
 
 export const api = {
