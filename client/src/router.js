@@ -5,7 +5,7 @@ import Words from './views/Words.vue';
 import New from './views/New.vue';
 import Show from './views/Show.vue';
 import Edit from './views/Edit.vue';
-import Test from './views/Test/vue';
+import Test from './views/Test.vue';
 
 Vue.use(Router)
 
