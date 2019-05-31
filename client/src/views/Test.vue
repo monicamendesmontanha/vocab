@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1>Quiz</h1>
-    <div v-if="words.length < 5">
-      <p>You need to enter at least five words to begin the test</p>
+    <div v-if="words.length < 2">
+      <p>You need to enter at least two words to begin the test</p>
     </div>
     <div v-else>
       <vocab-test :words="words"></vocab-test>
